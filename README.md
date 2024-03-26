@@ -8,5 +8,5 @@ I built a Non-Deterministic Finite Automata (DFA) to implement my lexical analys
 
 ## Model of the solution
 Now I present the DFA I created. 
-![]/au.png
+![]au.png
 
