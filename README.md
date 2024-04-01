@@ -1,7 +1,7 @@
 # TC2037_LexicalAnalysis
 
 ## Description
-This repository makes a lexical analysis on a langauge composed of five elvish words from the fantasy series 'The Lord of the Rings'. The language is composed of the following five words Σ = {ëar, echor echuir, edain, edhel}. 
+This repository makes a lexical analysis on a langauge composed of five elvish words from the fantasy series 'The Lord of the Rings'. The language is composed of the following five words Σ = {ë, a, r, c, h, o, u, i, d, n, e, l}.
 
 I built a Non-Deterministic Finite Automata (DFA) to implement my lexical analysis. My solution was modeled with 12 states represented by the letter q.
 - q0, q1, q2... q11
