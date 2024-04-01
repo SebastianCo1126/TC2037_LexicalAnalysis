@@ -1,7 +1,7 @@
 # TC2037_LexicalAnalysis
 
 ## Description
-This repository makes a lexical analysis on a langauge composed of five elvish words from the fantasy series 'The Lord of the Rings'. The language is composed of the following five words Σ = {ë, a, r, c, h, o, u, i, d, n, e, l}.
+This repository makes a lexical analysis on a langauge composed of five elvish words from the fantasy series 'The Lord of the Rings'. The language is composed of the following letters Σ = {ë, a, r, c, h, o, u, i, d, n, e, l}, looking to only accept the words _ëar, echor, echuir, edain, edhel._
 
 I built a Non-Deterministic Finite Automata (DFA) to implement my lexical analysis. My solution was modeled with 12 states represented by the letter q.
 - q0, q1, q2... q11
@@ -12,7 +12,7 @@ Now I present the DFA I created. <br>
 
 The presented automata is also equivalent to the following regular expression:
 
-- ^Ë(ar) | ^Ech(or | uir) | ^Ed(ain | hel)
+- ^ë(ar) | ^ech(or | uir) | ^ed(ain | hel)
 
 ## Implementation 
 For my implementation, I decided to use C++. The file DFA_2.cpp contains the code that models 
