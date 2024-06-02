@@ -138,10 +138,10 @@ My DFA was created to accept only the following words: ëar, echor, echui, edain
 
 The DFA is defined by a set of states, transitions, an initial state, and a set of accepting states. In my C++ code, it looks as follows: 
 
-_States_: The states (q0 to q10 and qf) represent different stages of parsing the input, declared in an enumeration. 
-_Initial State_: q0, the first state where the parsing begins. 
-_Accepting State_: qf, a state reached if the word is accepted.
-_Transitions_: Defined by the function transition(State state, char input), which specifies how the DFA moves from one state to another based on the input character.
+- _States_: The states (q0 to q10 and qf) represent different stages of parsing the input, declared in an enumeration. 
+- _Initial State_: q0, the first state where the parsing begins. 
+- _Accepting State_: qf, a state reached if the word is accepted.
+- _Transitions_: Defined by the function transition(State state, char input), which specifies how the DFA moves from one state to another based on the input character.
 
 **Theoretical and Mathematical Backing**
 
@@ -175,5 +175,6 @@ The word _elvish_ refers to those that are a part of the Elves. The most common 
 His work was always really inspired by lanauge, and his stories drew inspiration from them. Experimenting with the creation languages during his youth lead him to inlcude them in his _magnum opus_. This lead to a whole area of study, and several academics around the world have dedicated their lives to understanding the depth behind this fictional languages. 
 
 1. n/a. (Mar 2nd, 2023). _Elvish_. Tolkien Getway. https://tolkiengateway.net/wiki/Elvish
+2. Dylan. (Sept 10, 2023). _Finite Automata And Deterministic Finite Automata_. Medium.
 
 
