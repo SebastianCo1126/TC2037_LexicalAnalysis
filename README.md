@@ -117,6 +117,58 @@ My approach was using a switch case, that gets input from the characters in the 
 in accordance to the modeled automata. If there are no possible next steps, the case breaks and returns a message saying that the word IS NOT in the 
 language. 
 
+### Efficiency 
+
+This can be demosntrated to be an optimal solution due to some factor that I've identified. 
+
+**Minimal states and transition complexity**
+- The design minimizes the number of states and transitions required, avoiding unnecessary complexity and potential points of failure. The model was generated to use the least number of nodes possible for the parsing to function accordinf to the language. 
+
+**Single Pass Processing**
+- By processing each character in a single pass and using a direct acceptance check, my DFA ensures a fast and efficient determination of whether a word is accepted or not.
+
+**Default Reset Mechanism**
+- The default transition to q0 on invalid input provides a quick way to reject strings without further processing, enhancing efficiency.
+
+## Detailed overview
+
+My DFA was created to accept only the following words: ëar, echor, echui, edain, and edhel. (though the special character 'ë' was substituted by the character '%' for the program to recognize the character and avoid any problems). The DFA operates by transitioning through a series of states based (q) on the input characters of the word being parsed. The final state determines if the word is accepted or not. 
+
+**Structure and State Transitions**
+
+The DFA is defined by a set of states, transitions, an initial state, and a set of accepting states. In my C++ code, it looks as follows: 
+
+_States_: The states (q0 to q10 and qf) represent different stages of parsing the input, declared in an enumeration. 
+_Initial State_: q0, the first state where the parsing begins. 
+_Accepting State_: qf, a state reached if the word is accepted.
+_Transitions_: Defined by the function transition(State state, char input), which specifies how the DFA moves from one state to another based on the input character.
+
+**Theoretical and Mathematical Backing**
+
+Deterministic Finite Automata (DFA) Theory
+
+A DFA is a theoretical model of computation used to represent and recognize regular languages. It consists of:
+
+    A finite set of states (Q)
+    An input alphabet that contains the accepted symbols (Σ)
+    A transition function (δ: Q × Σ → Q)
+    A start state, belonging to Q (q0 ∈ Q)
+    A set of all accepting states (F)
+
+Reference: Dylan. (Sept 10, 2023). _Finite Automata And Deterministic Finite Automata_. Medium.
+
+In my DFA:
+
+    Q = {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, qf}
+    Σ = {'%', 'a', 'e', 'c', 'h', 'o', 'u', 'i', 'd', 'r', 'l', 'n'}
+    δ is defined in the transition function
+    q0 is the initial state
+    F = {qf}
+
+This DFA minimizes state usage by reusing states where possible and avoiding redundancy. For example, state q1 branches into different paths for words starting with 'e', while state q10 handles the unique '%' start.
+Each input character is processed only once, resulting in a time complexity of O(n), where n is the length of the input string. This ensures efficient performance in this small set of valid words. 
+
+
 ## Investigation and References
 The word _elvish_ refers to those that are a part of the Elves. The most common tongue spoken amongst the elves during the third age was **Sindarin**. All of this belong to the fantasy world of _'The Lord of the Rings'_. A famous fantasy book series written by John Ronald Reuel Tolkein (J.R.R Tolkien). 
 
