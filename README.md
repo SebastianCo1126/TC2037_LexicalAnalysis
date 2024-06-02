@@ -175,6 +175,6 @@ The word _elvish_ refers to those that are a part of the Elves. The most common 
 His work was always really inspired by lanauge, and his stories drew inspiration from them. Experimenting with the creation languages during his youth lead him to inlcude them in his _magnum opus_. This lead to a whole area of study, and several academics around the world have dedicated their lives to understanding the depth behind this fictional languages. 
 
 1. n/a. (Mar 2nd, 2023). _Elvish_. Tolkien Getway. https://tolkiengateway.net/wiki/Elvish
-2. Dylan. (Sept 10, 2023). _Finite Automata And Deterministic Finite Automata_. Medium.
+2. Dylan. (Sept 10, 2023). _Finite Automata And Deterministic Finite Automata_. Medium. https://medium.com/@anderson.dylan.522/finite-automata-and-deterministic-finite-automata-17477b924574
 
 
