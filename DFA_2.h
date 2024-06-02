@@ -1,18 +1,44 @@
-#include <iostream>
-#include <unordered_set>
-#include <string>
+// =========================================================
+// File: DFA_2.h
+// Author: Sebastián Colín
+// Last modification date: 02/06/2024
+// Description: This file defines a DFA that accepts only 
+// five words from an elven langauge.  
+// =========================================================
+
 
 #ifndef DFA_2_H_
 #define DFA_2_H_
 
+// Libraries 
+#include <iostream>
+#include <unordered_set>
+#include <string>
+
 using namespace std;
 
+// Enumeration to hold states (transition states and final state)
 enum State {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, qf};
 
+
+/**
+ * Determines whether the final state
+ * is an accepted one
+ * 
+ * @param State: at a certain node in the DFA
+ * @return bool: value for word in language or not
+*/
 bool accepting(State s) {
     return (s == qf)? true : false;
 }
 
+/**
+ * Transitions from states by getting 
+ * char inputs
+ * 
+ * @param State: current node in DFA, char: current character in the parsed word
+ * @return State: the value of a node in DFA
+*/
 State transition(State state, char input) {
     switch (state) {
         case q0:
@@ -73,37 +99,20 @@ State transition(State state, char input) {
     return q0; // Default transition for all other cases
 }
 
-bool accepts_word(const string& word) {
-    State current_state = q0;
+
+/**
+ * Parses a word and determines wheter it is 
+ * contained in the language or not
+ * 
+ * @param string: word to be parsed
+ * @return bool: value for word in language or not
+*/
+bool acceptsWord(const string& word) {
+    State currentState = q0;
     for (char c : word) {
-        current_state = transition(current_state, c);
+        currentState = transition(currentState, c);
     }
-    return accepting(current_state);
+    return accepting(currentState);
 }
-
-// int main() {
-
-//     cout << std::boolalpha; // outputs true or false for 1 || 0
-//     cout << accepts_word("%ar") << endl;
-//     cout << accepts_word("echor") << endl;
-//     cout << accepts_word("echuir") << endl;
-//     cout << accepts_word("edain") << endl;
-//     cout << accepts_word("edhel") << endl;
-//     cout << accepts_word("edhell") << endl; 
-
-//     std::string usr_in;
-
-//     while (true) {
-//         cout << "Type a word or 0 to exit:";
-//         cin >> usr_in;
-
-//         if (usr_in != "0") {
-//             accepts_word(usr_in)? cout << "Word IN the language.\n" : cout << "Word NOT IN the language.\n";
-//         } else {
-//             break;
-//         }
-//     }
-//     return 0;
-// }
 
 #endif
